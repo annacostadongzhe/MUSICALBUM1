@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+<radialGradient id="bg" cx="50%" cy="45%" r="65%">
+<stop offset="0%" stop-color="#2a1a0a"/>
+<stop offset="35%" stop-color="#1a1008"/>
+<stop offset="70%" stop-color="#0f0a06"/>
+<stop offset="100%" stop-color="#080503"/>
+</radialGradient>
+<radialGradient id="xunGlow" cx="50%" cy="40%" r="30%">
+<stop offset="0%" stop-color="rgba(200,120,60,0.08)"/>
+<stop offset="50%" stop-color="rgba(160,90,40,0.03)"/>
+<stop offset="100%" stop-color="rgba(120,60,20,0)"/>
+</radialGradient>
+<linearGradient id="xunBody" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0%" stop-color="#6b3a1f"/>
+<stop offset="30%" stop-color="#8b4a2a"/>
+<stop offset="50%" stop-color="#7a3f22"/>
+<stop offset="70%" stop-color="#5a3018"/>
+<stop offset="100%" stop-color="#3d2010"/>
+</linearGradient>
+<linearGradient id="xunHighlight" x1="0.2" y1="0.1" x2="0.8" y2="0.9">
+<stop offset="0%" stop-color="rgba(220,180,120,0.2)"/>
+<stop offset="40%" stop-color="rgba(200,160,100,0.05)"/>
+<stop offset="100%" stop-color="rgba(180,140,80,0)"/>
+</linearGradient>
+<filter id="glow">
+<feGaussianBlur stdDeviation="3" result="blur"/>
+<feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+<filter id="softGlow">
+<feGaussianBlur stdDeviation="12"/>
+</filter>
+</defs>
+<rect width="1024" height="1024" fill="url(#bg)"/>
+<rect width="1024" height="1024" fill="url(#xunGlow)"/>
+<g fill="rgba(180,140,80,0.012)">
+<circle cx="87" cy="123" r="0.6"/><circle cx="234" cy="67" r="0.4"/><circle cx="412" cy="95" r="0.5"/>
+<circle cx="678" cy="88" r="0.7"/><circle cx="845" cy="156" r="0.5"/><circle cx="956" cy="245" r="0.6"/>
+<circle cx="124" cy="345" r="0.4"/><circle cx="43" cy="567" r="0.6"/><circle cx="89" cy="789" r="0.5"/>
+<circle cx="234" cy="876" r="0.4"/><circle cx="445" cy="945" r="0.6"/><circle cx="667" cy="912" r="0.5"/>
+<circle cx="834" cy="867" r="0.4"/><circle cx="956" cy="723" r="0.6"/><circle cx="987" cy="456" r="0.5"/>
+<circle cx="978" cy="345" r="0.4"/><circle cx="156" cy="234" r="0.5"/><circle cx="324" cy="789" r="0.6"/>
+</g>
+<text x="512" y="340" text-anchor="middle" font-family="STKaiti,KaiTi,SimSun,serif" font-size="340" font-weight="bold" fill="rgba(200,120,50,0.018)" letter-spacing="80">楚辞</text>
+<ellipse cx="512" cy="430" rx="140" ry="175" fill="url(#xunBody)" stroke="rgba(180,120,60,0.15)" stroke-width="0.8"/>
+<ellipse cx="512" cy="430" rx="140" ry="175" fill="url(#xunHighlight)"/>
+<ellipse cx="512" cy="290" rx="18" ry="8" fill="rgba(20,12,6,0.8)" stroke="rgba(180,120,60,0.3)" stroke-width="0.5"/>
+<ellipse cx="512" cy="288" rx="10" ry="4" fill="rgba(10,6,3,0.6)"/>
+<circle cx="512" cy="380" r="9" fill="rgba(20,12,6,0.7)" stroke="rgba(160,100,50,0.25)" stroke-width="0.5"/>
+<circle cx="512" cy="380" r="5" fill="rgba(10,6,3,0.5)"/>
+<circle cx="475" cy="410" r="8" fill="rgba(20,12,6,0.7)" stroke="rgba(160,100,50,0.25)" stroke-width="0.5"/>
+<circle cx="475" cy="410" r="4.5" fill="rgba(10,6,3,0.5)"/>
+<circle cx="549" cy="410" r="8" fill="rgba(20,12,6,0.7)" stroke="rgba(160,100,50,0.25)" stroke-width="0.5"/>
+<circle cx="549" cy="410" r="4.5" fill="rgba(10,6,3,0.5)"/>
+<circle cx="445" cy="450" r="7" fill="rgba(20,12,6,0.7)" stroke="rgba(160,100,50,0.25)" stroke-width="0.5"/>
+<circle cx="445" cy="450" r="4" fill="rgba(10,6,3,0.5)"/>
+<circle cx="579" cy="450" r="7" fill="rgba(20,12,6,0.7)" stroke="rgba(160,100,50,0.25)" stroke-width="0.5"/>
+<circle cx="579" cy="450" r="4" fill="rgba(10,6,3,0.5)"/>
+<circle cx="475" cy="500" r="7" fill="rgba(20,12,6,0.7)" stroke="rgba(160,100,50,0.25)" stroke-width="0.5"/>
+<circle cx="475" cy="500" r="4" fill="rgba(10,6,3,0.5)"/>
+<circle cx="549" cy="500" r="7" fill="rgba(20,12,6,0.7)" stroke="rgba(160,100,50,0.25)" stroke-width="0.5"/>
+<circle cx="549" cy="500" r="4" fill="rgba(10,6,3,0.5)"/>
+<ellipse cx="512" cy="570" rx="6" ry="9" fill="rgba(20,12,6,0.6)" stroke="rgba(160,100,50,0.2)" stroke-width="0.5"/>
+<ellipse cx="512" cy="570" rx="3" ry="5" fill="rgba(10,6,3,0.4)"/>
+<g stroke="rgba(200,150,80,0.04)" stroke-width="0.4" fill="none">
+<path d="M400 400 Q450 390 500 395 Q550 400 600 390"/>
+<path d="M410 440 Q460 430 510 435 Q560 440 610 430"/>
+<path d="M420 480 Q470 470 520 475 Q570 480 620 470"/>
+<path d="M440 520 Q490 510 540 515 Q590 520 640 510"/>
+<path d="M430 360 Q480 350 530 355 Q580 360 630 350"/>
+</g>
+<g opacity="0.06">
+<ellipse cx="512" cy="240" rx="60" ry="20" fill="rgba(220,200,180,0.1)" filter="url(#softGlow)"/>
+<ellipse cx="505" cy="220" rx="45" ry="15" fill="rgba(220,200,180,0.07)" filter="url(#softGlow)"/>
+<ellipse cx="518" cy="200" rx="35" ry="12" fill="rgba(220,200,180,0.05)" filter="url(#softGlow)"/>
+<ellipse cx="510" cy="180" rx="25" ry="8" fill="rgba(220,200,180,0.03)" filter="url(#softGlow)"/>
+</g>
+<text x="512" y="710" text-anchor="middle" font-family="STKaiti,KaiTi,SimSun,serif" font-size="64" font-weight="bold" fill="rgba(200,140,70,0.55)" letter-spacing="24" filter="url(#glow)">埙·楚辞</text>
+<text x="512" y="755" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="16" fill="rgba(200,160,100,0.25)" letter-spacing="8">XUN · CHU CI</text>
+<text x="512" y="780" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="rgba(180,140,80,0.12)" letter-spacing="6">ANCIENT SOUL · ETERNAL VERSE</text>
+<line x1="362" y1="795" x2="662" y2="795" stroke="rgba(180,140,80,0.06)" stroke-width="0.5"/>
+<rect x="60" y="60" width="904" height="904" fill="none" stroke="rgba(180,140,80,0.03)" stroke-width="0.3"/>
+<rect x="70" y="70" width="884" height="884" fill="none" stroke="rgba(180,140,80,0.015)" stroke-width="0.3"/>
+<g fill="rgba(220,200,180,0.03)">
+<circle cx="120" cy="180" r="1.2"/><circle cx="880" cy="150" r="1.0"/>
+<circle cx="940" cy="380" r="0.8"/><circle cx="80" cy="500" r="1.1"/>
+<circle cx="920" cy="600" r="0.7"/><circle cx="150" cy="700" r="0.9"/>
+<circle cx="850" cy="800" r="0.6"/><circle cx="200" cy="130" r="1.0"/>
+<circle cx="780" cy="220" r="0.8"/><circle cx="300" cy="870" r="1.2"/>
+<circle cx="700" cy="900" r="0.7"/><circle cx="500" cy="920" r="0.9"/>
+</g>
+<g fill="rgba(200,140,70,0.07)" font-family="STKaiti,KaiTi,SimSun,serif" font-size="12">
+<text x="135" y="300">路漫漫其修远兮</text>
+<text x="728" y="450">吾将上下而求索</text>
+<text x="145" y="650">亦余心之所善兮</text>
+<text x="755" y="300">虽九死其犹未悔</text>
+</g>
+<ellipse cx="512" cy="430" rx="200" ry="240" fill="none" stroke="rgba(200,140,70,0.012)" stroke-width="1"/>
+<ellipse cx="512" cy="430" rx="170" ry="205" fill="none" stroke="rgba(200,140,70,0.008)" stroke-width="0.5"/>
+</svg>
