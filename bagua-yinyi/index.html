@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>八音演易 · 六十四卦音阵</title><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@200;300;400;500&display=swap" rel="stylesheet"><style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#0a0810;color:#c8b8a0;font-family:Inter,sans-serif;line-height:1.6;overflow-x:hidden}
+:root{--bg:#0a0810;--dk:#14101e;--dm:#1e182a;--dl:#282236;--bm:#7a6a5a;--sv:#c8b8a0;--sd:#5a4a3a;--mn:#d8c8b0;--tx:#b8a890;--td:#3a2a1a;--ac:#c8a050;--a2:#a08040;--trigram:rgba(200,180,120,0.45)}
+.hero{position:relative;height:80vh;min-height:500px;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;background:linear-gradient(180deg,#0e0a18 0%,#0a0810 60%,#08060e 100%)}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(200,180,120,0.03) 0%,transparent 60%)}
+.hero-content{position:relative;z-index:2;text-align:center;padding:20px}
+.hero-lang{font-size:11px;letter-spacing:6px;color:var(--sd);margin-bottom:16px}
+.hero-title{font-family:"Noto Serif SC",serif;font-size:clamp(48px,10vw,80px);font-weight:700;color:var(--mn);letter-spacing:16px;text-shadow:0 0 60px rgba(200,180,120,0.08)}
+.hero-sub{font-size:clamp(12px,2vw,16px);font-weight:200;letter-spacing:8px;color:var(--sv);margin-top:8px}
+.hero-desc{font-size:13px;letter-spacing:3px;color:var(--td);margin-top:24px;font-weight:300;line-height:1.8}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0.25}
+.scroll-hint span{font-size:10px;letter-spacing:3px;color:var(--td)}
+.scroll-dot{width:5px;height:5px;border-radius:50%;background:var(--ac);animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0);opacity:0.2}50%{transform:translateY(8px);opacity:1}}
+.main{padding:40px 16px 100px;max-width:960px;margin:0 auto}
+.info-section{text-align:center;margin-bottom:32px}
+.info-section h2{font-family:"Noto Serif SC",serif;font-size:18px;color:var(--sv);font-weight:400;letter-spacing:6px}
+.divider{width:32px;height:1px;background:var(--dl);margin:16px auto}
+.legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin-bottom:24px}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--td)}
+.legend-line{width:16px;height:2px;border-radius:1px}
+.legend-line.yan{background:var(--trigram)}
+.legend-line.yin{background:rgba(200,180,120,0.15);background-image:linear-gradient(90deg,transparent 0,transparent 5px,rgba(200,180,120,0.15)5px,rgba(200,180,120,0.15)11px,transparent 11px)}
+.grid-scroll{overflow-x:auto;margin:0 -16px;padding:0 16px}
+.grid{display:grid;grid-template-columns:48px repeat(8,minmax(72px,1fr));gap:3px;margin-top:16px;min-width:640px}
+.grid-label{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11px;color:var(--td);padding:6px 4px;text-align:center;min-height:64px}
+.grid-label .tri{display:flex;flex-direction:column;align-items:center;gap:2px}
+.grid-label .tri-line{width:12px;height:2px;border-radius:1px}
+.grid-label .tri-line.yan{background:var(--trigram)}
+.grid-label .tri-line.yin{background:rgba(200,180,120,0.15);background-image:linear-gradient(90deg,transparent 0,transparent 4px,rgba(200,180,120,0.15)4px,rgba(200,180,120,0.15)8px,transparent 8px)}
+.grid-label .inst{font-size:10px;color:rgba(200,180,120,0.2);margin-top:2px}
+.col-header{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;font-size:10px;color:var(--td);min-height:56px}
+.col-header .tri{display:flex;flex-direction:column;align-items:center;gap:2px}
+.cell{background:rgba(200,180,120,0.02);border:0.5px solid rgba(200,180,120,0.04);border-radius:4px;cursor:pointer;padding:4px;text-align:center;transition:all 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:56px;gap:1px;position:relative}
+.cell:hover{background:rgba(200,180,120,0.06);border-color:rgba(200,180,120,0.12)}
+.cell.playing{background:rgba(200,180,120,0.1);border-color:var(--ac);box-shadow:0 0 12px rgba(200,160,80,0.08)}
+.cell .num{font-size:9px;color:var(--td);font-weight:300;opacity:0.4}
+.cell .name{font-family:"Noto Serif SC",serif;font-size:12px;color:var(--tx);letter-spacing:1px;line-height:1.2}
+.cell .name-gua{font-size:10px;color:rgba(200,180,120,0.18)}
+.cell .playing-indicator{position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:16px;height:2px;background:var(--ac);border-radius:1px;opacity:0;transition:opacity 0.3s}
+.cell.playing .playing-indicator{opacity:1}
+.cell.dim{opacity:0.3}
+.section-label{font-family:"Noto Serif SC",serif;font-size:13px;color:var(--sd);letter-spacing:4px;margin:20px 0 8px;text-align:center}
+.inst-label{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 12px;margin:-4px 0 12px}
+.inst-label span{font-size:10px;color:rgba(200,180,120,0.15);letter-spacing:2px}
+.now-playing-bar{position:fixed;bottom:0;left:0;right:0;padding:12px 20px;background:rgba(10,8,16,0.95);backdrop-filter:blur(16px);border-top:1px solid rgba(200,180,120,0.06);display:none;align-items:center;gap:14px;z-index:100}
+.now-playing-bar.active{display:flex}
+.np-info{min-width:140px}
+.np-label{font-size:9px;letter-spacing:2px;color:var(--td);text-transform:uppercase}
+.np-title{font-family:"Noto Serif SC",serif;font-size:14px;color:var(--mn)}
+.np-gua{font-size:10px;color:var(--a2);letter-spacing:2px}
+.np-controls{display:flex;align-items:center;gap:12px}
+.np-btn{background:none;border:none;color:var(--sd);cursor:pointer;padding:4px;transition:color 0.2s;display:flex}
+.np-btn:hover{color:var(--sv)}
+.np-btn svg{width:18px;height:18px}
+.np-progress{flex:1;display:flex;align-items:center;gap:10px}
+.np-time{font-size:10px;color:var(--td);font-weight:300;min-width:32px}
+.progress-bar{flex:1;height:2px;background:var(--dl);border-radius:1px;cursor:pointer;position:relative}
+.progress-fill{height:100%;width:0%;background:var(--ac);border-radius:1px;transition:width 0.1s linear}
+.footer{text-align:center;padding:32px 20px;color:var(--td);font-size:11px;letter-spacing:2px;opacity:0.3}
+.footer span{display:block;margin-top:4px;font-size:10px;color:rgba(200,180,120,0.1)}
+@media(max-width:700px){.grid{grid-template-columns:36px repeat(8,minmax(60px,1fr));gap:2px;min-width:520px}.cell{min-height:44px;padding:3px}.cell .name{font-size:10px}.cell .num{font-size:8px}.col-header{min-height:44px;font-size:9px}.grid-label{min-height:48px;font-size:9px}.now-playing-bar{flex-wrap:wrap;padding:10px 12px}.np-progress{order:-1;width:100%}}
+</style></head><body>
+<section class="hero"><div class="hero-overlay"></div><div class="hero-content"><div class="hero-lang">EIGHT SOUNDS · MANIFESTING THE YIJING</div><h1 class="hero-title">八音演易</h1><div class="hero-sub">六十四卦音阵</div><div class="hero-desc">八卦八器 · 八八六十四卦 · 天声地韵</div></div><div class="scroll-hint"><span>ENTER THE GRID</span><div class="scroll-dot"></div></div></section>
+<main class="main"><div class="info-section"><h2>八卦八器</h2><div class="divider"></div></div>
+<div class="inst-label"><span>☰ 乾·编钟</span><span>☱ 兑·笛</span><span>☲ 离·琵琶</span><span>☳ 震·鼓</span><span>☴ 巽·箫</span><span>☵ 坎·古筝</span><span>☶ 艮·磬</span><span>☷ 坤·埙</span></div>
+<div class="legend"><div class="legend-item"><div class="legend-line yan"></div><span>阳爻</span></div><div class="legend-item"><div class="legend-line yin"></div><span>阴爻</span></div></div>
+<div class="grid-scroll"><div class="grid" id="hexagramGrid"></div></div>
+<div class="section-label">点击卦象播放</div>
+</main>
+<div class="now-playing-bar" id="nowPlayingBar">
+<div class="np-controls"><button class="np-btn" id="prevBtn"><svg viewBox="0 0 24 24"><polygon points="19,20 9,12 19,4" fill="currentColor"/><rect x="5" y="4" width="2" height="16" fill="currentColor"/></svg></button><button class="np-btn" id="playPauseBtn"><svg viewBox="0 0 24 24" id="npPlayIcon"><polygon points="7,4 19,12 7,20" fill="currentColor"/></svg><svg viewBox="0 0 24 24" id="npPauseIcon" style="display:none"><rect x="6" y="4" width="4" height="16" fill="currentColor"/><rect x="14" y="4" width="4" height="16" fill="currentColor"/></svg></button><button class="np-btn" id="nextBtn"><svg viewBox="0 0 24 24"><polygon points="5,4 15,12 5,20" fill="currentColor"/><rect x="17" y="4" width="2" height="16" fill="currentColor"/></svg></button></div>
+<div class="np-info"><span class="np-label">Now Playing</span><span class="np-title" id="npTitle">—</span><span class="np-gua" id="npGua"></span></div>
+<div class="np-progress"><span class="np-time" id="currentTime">0:00</span><div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div><span class="np-time" id="totalTime">0:00</span></div></div>
+<audio id="audioPlayer" preload="metadata"></audio>
+<footer class="footer">八音演易 · 六十四卦音阵<span>64 HEXAGRAMS · 8 INSTRUMENTS · 8 NATURAL SOUNDS</span></footer>
+<script>
+
+(function(){
+var trigrams=[
+{cn:"乾",py:"Qian",en:"Heaven",inst:"编钟",lines:[1,1,1]},
+{cn:"兑",py:"Dui",en:"Lake",inst:"笛",lines:[0,1,1]},
+{cn:"离",py:"Li",en:"Fire",inst:"琵琶",lines:[1,0,1]},
+{cn:"震",py:"Zhen",en:"Thunder",inst:"鼓",lines:[0,0,1]},
+{cn:"巽",py:"Xun",en:"Wind",inst:"箫",lines:[1,1,0]},
+{cn:"坎",py:"Kan",en:"Water",inst:"古筝",lines:[0,1,0]},
+{cn:"艮",py:"Gen",en:"Mountain",inst:"磬",lines:[1,0,0]},
+{cn:"坤",py:"Kun",en:"Earth",inst:"埙",lines:[0,0,0]}
+];
+var hexData=[
+{cn:"乾为天",num:1},{cn:"天泽履",num:10},{cn:"天火同人",num:13},{cn:"天雷无妄",num:25},
+{cn:"天风姤",num:44},{cn:"天水讼",num:6},{cn:"天山遁",num:33},{cn:"天地否",num:12},
+{cn:"泽天夬",num:43},{cn:"兑为泽",num:58},{cn:"泽火革",num:49},{cn:"泽雷随",num:17},
+{cn:"泽风大过",num:28},{cn:"泽水困",num:47},{cn:"泽山咸",num:31},{cn:"泽地萃",num:45},
+{cn:"火天大有",num:14},{cn:"火泽睽",num:38},{cn:"离为火",num:30},{cn:"火雷噬嗑",num:21},
+{cn:"火风鼎",num:50},{cn:"火水未济",num:64},{cn:"火山旅",num:56},{cn:"火地晋",num:35},
+{cn:"雷天大壮",num:34},{cn:"雷泽归妹",num:54},{cn:"雷火丰",num:55},{cn:"震为雷",num:51},
+{cn:"雷风恒",num:32},{cn:"雷水解",num:40},{cn:"雷山小过",num:62},{cn:"雷地豫",num:16},
+{cn:"风天小畜",num:9},{cn:"风泽中孚",num:61},{cn:"风火家人",num:37},{cn:"风雷益",num:42},
+{cn:"巽为风",num:57},{cn:"风水涣",num:59},{cn:"风山渐",num:53},{cn:"风地观",num:20},
+{cn:"水天需",num:5},{cn:"水泽节",num:60},{cn:"水火既济",num:63},{cn:"水雷屯",num:3},
+{cn:"水风井",num:48},{cn:"坎为水",num:29},{cn:"水山蹇",num:39},{cn:"水地比",num:8},
+{cn:"山天大畜",num:26},{cn:"山泽损",num:41},{cn:"山火贲",num:22},{cn:"山雷颐",num:27},
+{cn:"山风蛊",num:18},{cn:"山水蒙",num:4},{cn:"艮为山",num:52},{cn:"山地剥",num:23},
+{cn:"地天泰",num:11},{cn:"地泽临",num:19},{cn:"地火明夷",num:36},{cn:"地雷复",num:24},
+{cn:"地风升",num:46},{cn:"地水师",num:7},{cn:"地山谦",num:15},{cn:"坤为地",num:2}
+];
+function triSvg(lines,size,yanClr,yinClr){
+var gap=Math.max(2,size*0.12),w=size*0.75,h=size*0.06,r=h/2,s=(size-gap*2-h*3)/2;
+return lines.map(function(v,i){
+var y=s+i*(h+gap);
+return v?('<rect x="'+(size-w)/2+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="'+r+'" fill="'+yanClr+'"/>')
+:('<rect x="'+(size-w*0.4)/2+'" y="'+y+'" width="'+w*0.4+'" height="'+h+'" rx="'+r+'" fill="'+yinClr+'"/>'+
+'<rect x="'+(size+w*0.4)/2+'" y="'+y+'" width="'+w*0.4+'" height="'+h+'" rx="'+r+'" fill="'+yinClr+'"/>');
+}).join('');
+}
+var grid=document.getElementById("hexagramGrid");
+for(var r=-1;r<8;r++){
+for(var c=-1;c<8;c++){
+var cell=document.createElement("div");
+if(r==-1&&c==-1){cell.className="grid-label";cell.innerHTML='<span style="color:var(--td);font-size:10px;">卦</span>';}
+else if(r==-1){var t=trigrams[c];cell.className="col-header";cell.innerHTML='<div class="tri">'+triSvg(t.lines,22,"rgba(200,180,120,0.45)","rgba(200,180,120,0.1)")+'</div><span>'+t.cn+'</span><span style="font-size:8px;color:rgba(200,180,120,0.2)">'+t.inst+'</span>';}
+else if(c==-1){var t=trigrams[r];cell.className="grid-label";cell.innerHTML='<div class="tri">'+triSvg(t.lines,20,"rgba(200,180,120,0.35)","rgba(200,180,120,0.08)")+'</div><span>'+t.cn+'</span><span class="inst">'+t.inst+'</span>';}
+else{
+var idx=r*8+c,h=hexData[idx];
+cell.className="cell";cell.dataset.index=idx;
+var lowTri=trigrams[r],upTri=trigrams[c];
+cell.innerHTML='<span class="num">'+h.num+'</span><span class="name">'+h.cn+'</span><span class="name-gua">'+lowTri.cn+upTri.cn+'</span><div class="playing-indicator"></div>';
+cell.addEventListener("click",function(){playTrack(parseInt(this.dataset.index));});
+}
+grid.appendChild(cell);
+}
+}
+var a=document.getElementById("audioPlayer"),nb=document.getElementById("nowPlayingBar");
+var nt=document.getElementById("npTitle"),ng=document.getElementById("npGua");
+var np=document.getElementById("npPlayIcon"),npp=document.getElementById("npPauseIcon");
+var ppb=document.getElementById("playPauseBtn"),prb=document.getElementById("prevBtn"),nxb=document.getElementById("nextBtn");
+var pf=document.getElementById("progressFill"),pbar=document.getElementById("progressBar");
+var ct=document.getElementById("currentTime"),tt=document.getElementById("totalTime");
+var ci=-1,ip=false,cells=document.querySelectorAll(".cell");
+function fs(s){if(isNaN(s))return"0:00";var m=Math.floor(s/60),se=Math.floor(s%60);return m+":"+(se<10?"0":"")+se}
+function ld(i){
+if(i<0||i>=hexData.length)return;
+ci=i;var h=hexData[i],lt=trigrams[Math.floor(i/8)],ut=trigrams[i%8];
+a.src="generations/v1/"+("0"+(i+1)).slice(-2)+" "+h.cn+".mp3";a.load();
+nt.textContent=h.cn;ng.textContent=lt.cn+lt.inst+" 下 · "+ut.cn+ut.inst+" 上";
+nb.classList.add("active");
+cells.forEach(function(el,j){el.classList.toggle("playing",j===i);});
+}
+function pl(){a.play().then(function(){ip=true;np.style.display="none";npp.style.display="block";}).catch(function(){})}
+function pa(){a.pause();ip=false;np.style.display="block";npp.style.display="none";}
+function tg(i){if(i===ci){if(ip)pa();else pl();}else{ld(i);pl();}}
+function nx(){if(ci<0)return;var n=(ci+1)%hexData.length;ld(n);pl();}
+function pv(){if(ci<0)return;var p=(ci-1+hexData.length)%hexData.length;ld(p);pl();}
+ppb.addEventListener("click",function(){if(ci<0){ld(0);pl();}else if(ip)pa();else pl();});
+nxb.addEventListener("click",nx);prb.addEventListener("click",pv);
+a.addEventListener("timeupdate",function(){if(!a.duration)return;var p=(a.currentTime/a.duration)*100;pf.style.width=p+"%";ct.textContent=fs(a.currentTime);});
+a.addEventListener("loadedmetadata",function(){tt.textContent=fs(a.duration);});
+a.addEventListener("ended",nx);
+pbar.addEventListener("click",function(e){if(!a.duration)return;var r=this.getBoundingClientRect();a.currentTime=((e.clientX-r.left)/r.width)*a.duration;});
+document.addEventListener("keydown",function(e){if(e.target.tagName==="INPUT"||e.target.tagName==="TEXTAREA")return;
+if(e.code==="Space"){e.preventDefault();if(ci<0){ld(0);pl();}else if(ip)pa();else pl();}
+if(e.code==="ArrowRight")nx();if(e.code==="ArrowLeft")pv();});
+})();
+</script></body></html>

@@ -1,0 +1,130 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+<radialGradient id="bg" cx="50%" cy="50%" r="60%">
+<stop offset="0%" stop-color="#1a1420"/>
+<stop offset="40%" stop-color="#0e0a12"/>
+<stop offset="100%" stop-color="#050308"/>
+</radialGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="softGlow"><feGaussianBlur stdDeviation="10"/></filter>
+</defs>
+<rect width="1024" height="1024" fill="url(#bg)"/>
+<g fill="rgba(200,180,160,0.015)">
+<circle cx="87" cy="123" r="0.6"/><circle cx="234" cy="67" r="0.4"/><circle cx="412" cy="95" r="0.5"/>
+<circle cx="678" cy="88" r="0.7"/><circle cx="845" cy="156" r="0.5"/><circle cx="956" cy="245" r="0.6"/>
+<circle cx="124" cy="345" r="0.4"/><circle cx="43" cy="567" r="0.6"/><circle cx="89" cy="789" r="0.5"/>
+<circle cx="234" cy="876" r="0.4"/><circle cx="445" cy="945" r="0.6"/><circle cx="667" cy="912" r="0.5"/>
+</g>
+<rect x="60" y="60" width="904" height="904" fill="none" stroke="rgba(200,180,120,0.025)" stroke-width="0.3"/>
+<rect x="70" y="70" width="884" height="884" fill="none" stroke="rgba(200,180,120,0.015)" stroke-width="0.3"/>
+<text x="512" y="420" text-anchor="middle" font-family="STKaiti,KaiTi,SimSun,serif" font-size="76" font-weight="bold" fill="rgba(200,180,120,0.45)" letter-spacing="20" filter="url(#glow)">八音演易</text>
+<text x="512" y="460" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="rgba(200,180,120,0.18)" letter-spacing="8">EIGHT SOUNDS · MANIFESTING THE YIJING</text>
+<line x1="312" y1="480" x2="712" y2="480" stroke="rgba(200,180,120,0.06)" stroke-width="0.5"/>
+
+<!-- 8 trigrams around the title, Fuxi arrangement, center at 512, radius 320 -->
+<!-- The trigram lines: each yang line is a solid rect, each yin line is two rects with a gap -->
+<!-- 8 trigrams in Fuxi arrangement, centered at (512, 530), radius 280 -->
+<!-- Trigram colors -->
+<g stroke="rgba(200,180,120,0.6)" stroke-width="2.5" stroke-linecap="round" fill="none">
+
+<!-- 乾 ☰ Heaven — Top (512, 250) — [1,1,1] -->
+<g transform="translate(512,250)">
+  <rect x="-12" y="-14" width="24" height="2.5" rx="1"/>
+  <rect x="-12" y="-6" width="24" height="2.5" rx="1"/>
+  <rect x="-12" y="2" width="24" height="2.5" rx="1"/>
+  <text x="28" y="-2" fill="rgba(200,180,120,0.35)" font-family="STKaiti,serif" font-size="11" stroke="none">乾</text>
+</g>
+
+<!-- 兑 ☱ Lake — Top-right (710, 332) — [0,1,1] -->
+<g transform="translate(710,332)">
+  <rect x="-12" y="-14" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="-14" width="10" height="2.5" rx="1"/>
+  <rect x="-12" y="-6" width="24" height="2.5" rx="1"/>
+  <rect x="-12" y="2" width="24" height="2.5" rx="1"/>
+  <text x="24" y="-2" fill="rgba(200,180,120,0.35)" font-family="STKaiti,serif" font-size="11" stroke="none">兑</text>
+</g>
+
+<!-- 离 ☲ Fire — Right (792, 530) — [1,0,1] -->
+<g transform="translate(792,530)">
+  <rect x="-12" y="-14" width="24" height="2.5" rx="1"/>
+  <rect x="-12" y="-6" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="-6" width="10" height="2.5" rx="1"/>
+  <rect x="-12" y="2" width="24" height="2.5" rx="1"/>
+  <text x="24" y="-2" fill="rgba(200,180,120,0.35)" font-family="STKaiti,serif" font-size="11" stroke="none">离</text>
+</g>
+
+<!-- 震 ☳ Thunder — Bottom-right (710, 728) — [0,0,1] -->
+<g transform="translate(710,728)">
+  <rect x="-12" y="-14" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="-14" width="10" height="2.5" rx="1"/>
+  <rect x="-12" y="-6" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="-6" width="10" height="2.5" rx="1"/>
+  <rect x="-12" y="2" width="24" height="2.5" rx="1"/>
+  <text x="24" y="-2" fill="rgba(200,180,120,0.35)" font-family="STKaiti,serif" font-size="11" stroke="none">震</text>
+</g>
+
+<!-- 坤 ☷ Earth — Bottom (512, 810) — [0,0,0] -->
+<g transform="translate(512,810)">
+  <rect x="-12" y="-14" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="-14" width="10" height="2.5" rx="1"/>
+  <rect x="-12" y="-6" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="-6" width="10" height="2.5" rx="1"/>
+  <rect x="-12" y="2" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="2" width="10" height="2.5" rx="1"/>
+  <text x="24" y="-2" fill="rgba(200,180,120,0.35)" font-family="STKaiti,serif" font-size="11" stroke="none">坤</text>
+</g>
+
+<!-- 艮 ☶ Mountain — Bottom-left (314, 728) — [1,0,0] -->
+<g transform="translate(314,728)">
+  <rect x="-12" y="-14" width="24" height="2.5" rx="1"/>
+  <rect x="-12" y="-6" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="-6" width="10" height="2.5" rx="1"/>
+  <rect x="-12" y="2" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="2" width="10" height="2.5" rx="1"/>
+  <text x="-56" y="-2" fill="rgba(200,180,120,0.35)" font-family="STKaiti,serif" font-size="11" stroke="none">艮</text>
+</g>
+
+<!-- 坎 ☵ Water — Left (232, 530) — [0,1,0] -->
+<g transform="translate(232,530)">
+  <rect x="-12" y="-14" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="-14" width="10" height="2.5" rx="1"/>
+  <rect x="-12" y="-6" width="24" height="2.5" rx="1"/>
+  <rect x="-12" y="2" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="2" width="10" height="2.5" rx="1"/>
+  <text x="-56" y="-2" fill="rgba(200,180,120,0.35)" font-family="STKaiti,serif" font-size="11" stroke="none">坎</text>
+</g>
+
+<!-- 巽 ☴ Wind — Top-left (314, 332) — [1,1,0] -->
+<g transform="translate(314,332)">
+  <rect x="-12" y="-14" width="24" height="2.5" rx="1"/>
+  <rect x="-12" y="-6" width="24" height="2.5" rx="1"/>
+  <rect x="-12" y="2" width="10" height="2.5" rx="1"/>
+  <rect x="2" y="2" width="10" height="2.5" rx="1"/>
+  <text x="-56" y="-2" fill="rgba(200,180,120,0.35)" font-family="STKaiti,serif" font-size="11" stroke="none">巽</text>
+</g>
+
+</g>
+
+<!-- Eight instruments listed below -->
+<g font-family="STKaiti,KaiTi,serif" font-size="13" fill="rgba(200,180,120,0.28)" text-anchor="middle">
+<text x="512" y="520">编钟 · 笛 · 琵琶 · 鼓 · 箫 · 古筝 · 磬 · 埙</text>
+<text x="512" y="543" font-family="Georgia,serif" font-size="9" fill="rgba(200,180,120,0.12)" letter-spacing="3">
+BIANZHONG · DIZI · PIPA · DRUM · XIAO · GUZHENG · QING · XUN</text>
+</g>
+
+<!-- Ring connecting trigrams -->
+<circle cx="512" cy="530" r="280" fill="none" stroke="rgba(200,180,120,0.03)" stroke-width="0.5"/>
+<circle cx="512" cy="530" r="200" fill="none" stroke="rgba(200,180,120,0.02)" stroke-width="0.3"/>
+<circle cx="512" cy="530" r="360" fill="none" stroke="rgba(200,180,120,0.02)" stroke-width="0.3"/>
+
+<!-- 64 hexagram grid pattern (small dots representing the 8x8 matrix) -->
+<g fill="rgba(200,180,120,0.03)">
+<circle cx="512" cy="580" r="88" opacity="0"/>
+</g>
+
+<!-- Bottom section: 64 hexagrams reference -->
+<text x="512" y="880" text-anchor="middle" font-family="STKaiti,KaiTi,serif" font-size="12" fill="rgba(200,180,120,0.15)" letter-spacing="6">六十四卦 × 八音八器</text>
+<text x="512" y="900" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="rgba(200,180,120,0.08)" letter-spacing="4">64 HEXAGRAMS · 8 INSTRUMENTS · 8 NATURAL SOUNDS</text>
+<line x1="362" y1="918" x2="662" y2="918" stroke="rgba(200,180,120,0.04)" stroke-width="0.5"/>
+
+</svg>
